@@ -1,0 +1,36 @@
+.home-container{
+    height: 90vh;
+    overflow: auto;
+}
+.container{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.image-container{
+    width: 50%;
+}
+
+.info-container{
+    width: 50%;
+    text-align: center;
+}
+
+
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: column;
+        padding: 20px
+    }
+    .image-container{
+        width: 100%;
+        order: 1;
+    }
+    .info-container{width: 100%;order: 2;
+        margin-bottom: 20px;
+    }
+}
+

@@ -1,0 +1,24 @@
+<div class="loader-container w-100" *ngIf="isLoading">
+    <app-loader-spinner></app-loader-spinner>
+</div>
+<div class="cotegory-container" *ngIf="!isLoading">
+    <h1 style="color: rgb(61, 61, 61); font-size: 38px; font-weight: bold;" class="mb-4">Add Categories</h1>
+    <div class="card  mt-3" style="border: 0;">
+        <form [formGroup]="regForm" #r="ngForm" (ngSubmit)="onSubmit(r.value)"class="form">
+            <!-- <h2 class="heading text-center">Add Category</h2> -->
+            <!-- <h1 style="color: rgb(98, 90, 252); font-size: 38px; font-weight: bold;" class="mb-4">Add Products</h1> -->
+            <div class="form-group mb-2">
+                <label for="category">Category Name</label>
+                <input placeholder="Enter category" type="text" class="form-control" id="category" formControlName="category" required>
+                <div *ngIf="regForm.controls['category'].touched && regForm.controls['category']?.['errors']">
+                    <div *ngIf="regForm.controls['category']?.['errors']?.['required']"
+                        class="error-message text-danger">
+                        Category is required
+                    </div>
+                </div>
+            </div>
+        
+            <button type="submit" class="btn btn-primary mt-4 w-100" [disabled]="regForm.invalid" >Add Category</button>
+        </form>
+    </div>
+</div>

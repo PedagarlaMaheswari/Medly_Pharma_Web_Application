@@ -1,0 +1,24 @@
+.navbar {
+  min-height: 10vh;
+  padding: 10px 40px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #fff;
+}
+
+@media screen and (max-width:768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+
+.navbar-nav .nav-link.active {
+  color: black;
+}
+
+.image-logo{
+  width: 50px;
+  margin-right: 40px;
+}
